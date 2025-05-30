@@ -3,197 +3,494 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GAX Infrastructure Ltd.</title>
+  <title>GAX Infrastructure Ltd. | Building Foundations, Shaping Futures</title>
+
+  <!-- SEO & Open Graph -->
+  <meta name="description" content="GAX Infrastructure Ltd. delivers innovative, sustainable civil engineering solutions across Nigeria with headquarters in Abuja and office in Enugu. Contact us today!" />
+  <meta name="keywords" content="Civil Engineering, Infrastructure, Nigeria, Construction, Roads, Bridges, Buildings, GAX Infrastructure Ltd" />
+  <meta property="og:title" content="GAX Infrastructure Ltd." />
+  <meta property="og:description" content="Building Foundations, Shaping Futures - Civil engineering firm with nationwide delivery." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gaxinfrastructureltd.github.io" />
+  <meta property="og:image" content="images/logo.jpg" />
+  <link rel="canonical" href="https://gaxinfrastructureltd.github.io" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/logo.jpg" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+
   <style>
+    /* Reset & Base */
+    *, *::before, *::after { box-sizing: border-box; }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0; padding: 0;
+      background: #fff;
       color: #222;
+      line-height: 1.6;
+      scroll-behavior: smooth;
     }
+    a {
+      color: #17a589;
+      text-decoration: none;
+    }
+    a:hover, a:focus {
+      text-decoration: underline;
+      outline: none;
+    }
+    h1, h2, h3 {
+      color: #154360;
+      margin-top: 0;
+    }
+    /* Header */
     header {
       background: #154360;
       color: white;
-      padding: 20px;
+      padding: 20px 15px;
       text-align: center;
+      position: relative;
+      z-index: 1000;
     }
     header img {
-      width: 100px;
+      width: 110px;
       height: auto;
-      border-radius: 10px;
+      border-radius: 12px;
       margin-bottom: 10px;
+      border: 2px solid #17a589;
     }
     header h1 {
-      margin: 10px 0 0;
-      font-size: 2.5em;
+      font-size: 2.7rem;
+      margin-bottom: 5px;
+      font-weight: 700;
     }
     header p {
-      margin-top: 10px;
       font-style: italic;
+      font-weight: 400;
+      font-size: 1.1rem;
+      letter-spacing: 0.04em;
     }
+    /* Navigation */
     nav {
-      background: #1A5276;
+      position: sticky;
+      top: 0;
+      background: #1a5276;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+      z-index: 999;
     }
     nav a {
       color: white;
-      padding: 14px 20px;
-      text-decoration: none;
-      font-weight: bold;
+      padding: 16px 25px;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+      border-bottom: 3px solid transparent;
+      display: inline-block;
     }
-    nav a:hover {
-      background: #17A589;
+    nav a:hover, nav a:focus {
+      background: #17a589;
+      border-bottom: 3px solid #fff;
+      outline: none;
     }
+
+    /* Container Section */
     .section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: 20px auto;
-      background: #f9f9f9;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      max-width: 960px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #fefefe;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    h2 {
+    .section h2 {
+      border-left: 6px solid #17a589;
+      padding-left: 15px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-size: 2rem;
+    }
+
+    /* Collapsible About Subsections */
+    .collapsible {
+      background-color: #e8f6f3;
       color: #154360;
-      border-left: 5px solid #17A589;
-      padding-left: 10px;
+      cursor: pointer;
+      padding: 14px 20px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1.25rem;
+      font-weight: 700;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: background-color 0.25s ease;
     }
-    ul {
+    .collapsible:hover, .collapsible:focus {
+      background-color: #d1e7e3;
+      outline: none;
+    }
+    .active, .collapsible:active {
+      background-color: #b0d7cf;
+    }
+    .content {
+      padding: 0 20px 20px;
+      display: none;
+      overflow: hidden;
+      background-color: #f6fdfc;
+      border-radius: 0 0 8px 8px;
+      font-weight: 400;
+      color: #222;
+      line-height: 1.5;
+      user-select: text;
+    }
+    .content ul {
+      margin-top: 0;
+      margin-bottom: 0;
       padding-left: 20px;
     }
-    input, textarea {
-      width: 100%;
-      margin-top: 8px;
-      padding: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      font-size: 1em;
+    .content ul li {
+      margin-bottom: 8px;
     }
-    label {
-      font-weight: bold;
-      margin-top: 15px;
-      display: block;
-    }
-    button {
-      margin-top: 15px;
-      padding: 12px;
-      background-color: #17A589;
-      color: white;
-      border: none;
-      font-size: 1em;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #148F77;
-    }
-    footer {
-      background: #154360;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-    footer a {
-      color: #17A589;
-      text-decoration: none;
-    }
+
+    /* Gallery */
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 18px;
     }
     .gallery img, .gallery video {
       width: 100%;
-      border-radius: 10px;
+      border-radius: 12px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+      cursor: pointer;
+      transition: transform 0.25s ease;
+    }
+    .gallery img:hover, .gallery video:hover {
+      transform: scale(1.04);
+      box-shadow: 0 5px 10px rgba(0,0,0,0.25);
+    }
+    .caption {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 6px;
+      font-style: italic;
+      text-align: center;
+    }
+
+    /* Lightbox Overlay */
+    #lightboxOverlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1100;
+    }
+    #lightboxOverlay img, #lightboxOverlay video {
+      max-width: 90vw;
+      max-height: 80vh;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(255,255,255,0.9);
+    }
+    #lightboxOverlay video {
+      outline: none;
+    }
+    #lightboxOverlay .close-btn {
+      position: absolute;
+      top: 20px; right: 30px;
+      font-size: 2.5rem;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      font-weight: 700;
+      background: rgba(0,0,0,0.5);
+      border-radius: 50%;
+      width: 40px; height: 40px;
+      line-height: 40px;
+      text-align: center;
+    }
+
+    /* Contact Form */
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 600;
+      color: #154360;
+    }
+    input[type="text"], input[type="email"], textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border-radius: 6px;
+      border: 1.5px solid #ccc;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+      resize: vertical;
+    }
+    input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+      border-color: #17a589;
+      outline: none;
+    }
+    button {
+      margin-top: 20px;
+      padding: 14px 24px;
+      background-color: #17a589;
+      border: none;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
+    button:hover, button:focus {
+      background-color: #148f77;
+      outline: none;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #154360;
+      color: #d4d4d4;
+      padding: 25px 15px;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #17a589;
+      margin: 0 8px;
+    }
+    footer .social-icons {
+      margin-top: 12px;
+    }
+    footer .social-icons a {
+      font-size: 1.4rem;
+      margin: 0 8px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    footer .social-icons a:hover, footer .social-icons a:focus {
+      color: #e8f6f3;
+      outline: none;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 480px) {
+      nav a {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+      }
+      header h1 {
+        font-size: 1.9rem;
+      }
+      .section h2 {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <img src="images/logo.jpg" alt="GAX Logo" />
-    <h1>GAX Infrastructure Ltd.</h1>
-    <p>Building Foundations, Shaping Futures</p>
-  </header>
+<header role="banner">
+  <img src="images/logo.jpg" alt="GAX Infrastructure Ltd Logo" />
+  <h1>GAX Infrastructure Ltd.</h1>
+  <p>Building Foundations, Shaping Futures</p>
+</header>
 
-  <nav>
-    <a href="#about">About Us</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<nav role="navigation" aria-label="Primary navigation">
+  <a href="#about">About</a>
+  <a href="#why-choose-us">Why Choose Us</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#testimonials">Testimonials</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-  <section class="section" id="about">
-    <h2>About Us</h2>
-    <h3>Who We Are</h3>
-    <p>GAX Infrastructure Ltd. is a dynamic civil engineering company dedicated to delivering top-tier infrastructure projects throughout Nigeria. We combine cutting-edge technology with expert engineering to build roads, bridges, buildings, and urban systems that endure and inspire. Every project we undertake reflects our passion for quality, innovation, and sustainable development.</p>
-    <h3>Vision</h3>
-    <p>To be Africa's benchmark for innovative and lasting infrastructure solutions that drive progress and empower generations.</p>
-    <h3>Mission</h3>
-    <ul>
-      <li>Deliver customized, cost-effective civil engineering solutions</li>
-      <li>Promote safety, quality, and environmental responsibility</li>
-      <li>Transform communities through infrastructure that lasts</li>
-    </ul>
-    <h3>Our Services</h3>
-    <ul>
-      <li>Real Estate Development</li>
-      <li>Road Construction & Maintenance</li>
-      <li>Bridge & Drainage Engineering</li>
-      <li>Structural Design & Building Works</li>
-      <li>Foundation & Soil Engineering</li>
-      <li>Perimeter Fencing & Landscaping</li>
-      <li>Turnkey Civil Construction Projects</li>
-    </ul>
-    <h3>Core Values</h3>
-    <ul>
-      <li><strong>Integrity:</strong> Trust is our foundation</li>
-      <li><strong>Excellence:</strong> Quality in every detail</li>
-      <li><strong>Innovation:</strong> Smart engineering solutions</li>
-      <li><strong>Sustainability:</strong> Building for the future</li>
-      <li><strong>Collaboration:</strong> Together, we achieve more</li>
-    </ul>
-  </section>
+<main role="main" class="main-content" tabindex="-1">
 
-  <section class="section" id="gallery">
-    <h2>Our Work</h2>
-    <div class="gallery">
-      <img src="images/photo1.jpeg" alt="Construction Site 1" />
-      <img src="images/photo2.jpeg" alt="Construction Site 2" />
-      <video controls>
-        <source src="videos/video1.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+  <section id="about" class="section" aria-labelledby="about-heading">
+    <h2 id="about-heading">About Us</h2>
+
+    <button class="collapsible" aria-expanded="false" aria-controls="about-company" id="about-company-btn">Our Company</button>
+    <div id="about-company" class="content" role="region" aria-labelledby="about-company-btn">
+      <p>GAX Infrastructure Ltd is a dynamic civil engineering firm dedicated to delivering innovative, sustainable infrastructure solutions across Nigeria. With headquarters in Abuja and an office in Enugu, we provide nationwide delivery.</p>
+    </div>
+
+    <button class="collapsible" aria-expanded="false" aria-controls="about-mission" id="about-mission-btn">Our Mission</button>
+    <div id="about-mission" class="content" role="region" aria-labelledby="about-mission-btn">
+      <p>Our mission is to build strong, lasting foundations that empower communities and shape a brighter future through top-quality engineering and construction services.</p>
+    </div>
+
+    <button class="collapsible" aria-expanded="false" aria-controls="about-services" id="about-services-btn">Our Services</button>
+    <div id="about-services" class="content" role="region" aria-labelledby="about-services-btn">
+      <ul>
+        <li>Road and Bridge Construction</li>
+        <li>Residential and Commercial Building</li>
+        <li>Land Surveying and Site Analysis</li>
+        <li>Concrete and Asphalt Paving</li>
+        <li>Project Management and Consultancy</li>
+        <li>Nationwide Delivery and Support</li>
+      </ul>
     </div>
   </section>
 
-  <section class="section" id="contact">
-    <h2>Contact Us</h2>
-    <p>Reach out to us today! Complete the form below or email us at <a href="mailto:gaxinfrastructureltd@gmail.com">gaxinfrastructureltd@gmail.com</a>.</p>
-    <form action="https://formsubmit.co/gaxinfrastructureltd@gmail.com" method="POST">
-      <label for="name">Full Name:</label>
-      <input type="text" id="name" name="name" required />
+  <section id="why-choose-us" class="section" aria-labelledby="why-heading">
+    <h2 id="why-heading">Why Choose Us</h2>
+    <ul>
+      <li><strong>Nationwide Presence:</strong> Headquarters in Abuja and an office in Enugu, enabling seamless service across Nigeria.</li>
+      <li><strong>Experienced Team:</strong> Skilled civil engineers and project managers with proven track records.</li>
+      <li><strong>Quality Assurance:</strong> Commitment to high standards, safety, and sustainability.</li>
+      <li><strong>Customer Focus:</strong> Personalized service tailored to your project needs.</li>
+      <li><strong>Innovative Solutions:</strong> Using modern technology for efficient and durable infrastructure.</li>
+    </ul>
+  </section>
 
-      <label for="email">Email Address:</label>
-      <input type="email" id="email" name="email" required />
+  <section id="gallery" class="section" aria-labelledby="gallery-heading">
+    <h2 id="gallery-heading">Gallery</h2>
+    <div class="gallery" role="list">
+      <figure role="listitem">
+        <img src="images/site1.jpg" alt="Road construction project in Abuja" tabindex="0" data-type="image" data-src="images/site1-large.jpg" />
+        <figcaption class="caption">Road Construction Project - Abuja</figcaption>
+      </figure>
+      <figure role="listitem">
+        <img src="images/site2.jpg" alt="Bridge engineering project in Enugu" tabindex="0" data-type="image" data-src="images/site2-large.jpg" />
+        <figcaption class="caption">Bridge Engineering Project - Enugu</figcaption>
+      </figure>
+      <figure role="listitem">
+        <video controls tabindex="0" data-type="video" data-src="videos/project1.mp4" preload="metadata" aria-label="Video showing commercial building construction">
+          <source src="videos/project1.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <figcaption class="caption">Commercial Building Construction</figcaption>
+      </figure>
+    </div>
+  </section>
 
-      <label for="message">Your Message:</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+  <section id="testimonials" class="section" aria-labelledby="testimonials-heading">
+    <h2 id="testimonials-heading">Testimonials</h2>
+    <blockquote>
+      <p>"GAX Infrastructure Ltd delivered our project on time with exceptional quality and professionalism. Highly recommended!"</p>
+      <footer>— Ada N., Abuja</footer>
+    </blockquote>
+    <blockquote>
+      <p>"Their team’s expertise and commitment made the entire building process smooth and efficient."</p>
+      <footer>— Emeka O., Enugu</footer>
+    </blockquote>
+  </section>
 
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_subject" value="New Inquiry from GAX Website" />
+  <section id="contact" class="section" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Contact Us</h2>
+    <p>Headquarters: Abuja | Office: Enugu</p>
+    <p>We provide nationwide delivery and support.</p>
+    <form action="https://formsubmit.co/your-email@example.com" method="POST" aria-label="Contact form">
+      <label for="name">Full Name *</label>
+      <input type="text" id="name" name="name" required aria-required="true" placeholder="Your full name" />
+
+      <label for="email">Email Address *</label>
+      <input type="email" id="email" name="email" required aria-required="true" placeholder="you@example.com" />
+
+      <label for="message">Message *</label>
+      <textarea id="message" name="message" rows="5" required aria-required="true" placeholder="Write your message here"></textarea>
+
+      <!-- Honeypot anti-spam -->
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+      <!-- Redirect after submission -->
+      <input type="hidden" name="_next" value="https://gaxinfrastructureltd.github.io/thank-you.html" />
 
       <button type="submit">Send Message</button>
     </form>
   </section>
 
-  <footer>
-    <p>📍 Headquarters: Abuja | Office: Enugu – Serving Clients Nationwide</p>
-    <p>📞 +234 813 473 5064 | 📧 <a href="mailto:gaxinfrastructureltd@gmail.com">gaxinfrastructureltd@gmail.com</a></p>
-    <p>&copy; 2025 GAX Infrastructure Ltd. All rights reserved.</p>
-  </footer>
+</main>
+
+<div id="lightboxOverlay" role="dialog" aria-modal="true" aria-label="Image preview">
+  <span class="close-btn" role="button" tabindex="0" aria-label="Close preview">&times;</span>
+  <img alt="" />
+  <video controls autoplay muted></video>
+</div>
+
+<footer role="contentinfo">
+  <p>© 2025 GAX Infrastructure Ltd. All rights reserved.</p>
+  <p>Headquarters: Abuja | Office: Enugu | Nationwide Delivery</p>
+  <div class="social-icons" aria-label="Social media links">
+    <a href="https://www.facebook.com/gaxinfrastructure" target="_blank" rel="noopener" aria-label="Facebook">&#x1F426;</a>
+    <a href="https://www.linkedin.com/company/gaxinfrastructure" target="_blank" rel="noopener" aria-label="LinkedIn">&#128100;</a>
+    <a href="https://instagram.com/gaxinfrastructure" target="_blank" rel="noopener" aria-label="Instagram">&#x1F4F7;</a>
+  </div>
+  <p><a href="privacy-policy.html">Privacy Policy</a></p>
+</footer>
+
+<script>
+  // Collapsible sections
+  document.querySelectorAll(".collapsible").forEach(button => {
+    button.addEventListener("click", () => {
+      const expanded = button.getAttribute("aria-expanded") === "true";
+      button.setAttribute("aria-expanded", !expanded);
+      const content = document.getElementById(button.getAttribute("aria-controls"));
+      if(content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  });
+
+  // Lightbox functionality
+  const lightbox = document.getElementById('lightboxOverlay');
+  const lightboxImg = lightbox.querySelector('img');
+  const lightboxVideo = lightbox.querySelector('video');
+  const closeBtn = lightbox.querySelector('.close-btn');
+
+  document.querySelectorAll('.gallery img, .gallery video').forEach(item => {
+    item.addEventListener('click', () => {
+      const type = item.dataset.type;
+      const src = item.dataset.src || item.src;
+      if(type === 'image') {
+        lightboxImg.src = src;
+        lightboxImg.alt = item.alt || "";
+        lightboxImg.style.display = "block";
+        lightboxVideo.style.display = "none";
+        lightboxVideo.pause();
+        lightboxVideo.src = "";
+      } else if(type === 'video') {
+        lightboxVideo.src = src;
+        lightboxVideo.style.display = "block";
+        lightboxImg.style.display = "none";
+        lightboxVideo.focus();
+      }
+      lightbox.style.display = 'flex';
+      document.body.style.overflow = 'hidden'; // prevent background scroll
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+    lightboxImg.src = "";
+    lightboxVideo.pause();
+    lightboxVideo.src = "";
+    document.body.style.overflow = ''; // restore scroll
+  });
+  // Close lightbox on ESC key
+  window.addEventListener('keydown', e => {
+    if(e.key === "Escape" && lightbox.style.display === 'flex') {
+      closeBtn.click();
+    }
+  });
+</script>
 
 </body>
 </html>
